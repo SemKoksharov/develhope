@@ -1,4 +1,4 @@
-package Es11_confr;
+package Es13_logici_1;
 /*
 Scrivi un programma che contiene un metodo che dati 2 interi
 in ingresso ed un valore di confronto verifichi se il numero
