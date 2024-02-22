@@ -11,19 +11,19 @@ public class Main {
 
         switch (tipoDiOperazione) {
             case '+':
-                result = "Addizione";
+                result = "Addizione.";
                 break;
             case '-':
-                result = "Sottrazione";
+                result = "Sottrazione.";
                 break;
             case '*':
-                result = "Moltiplicazione";
+                result = "Moltiplicazione.";
                 break;
             case '/':
-                result = "Divizione";
+                result = "Divizione.";
                 break;
             case '%':
-                result = "Divisione con il resto";
+                result = "Divisione con il resto.";
                 break;
             default:
                 result = "sconosciuto.\nHAI UN ERRORE! TRA 10 SECONDI IL TUO PC SI ESPLODERA!";
