@@ -18,6 +18,4 @@ public class Main {
 
         System.out.println("Carello: " + carello);
     }
-
-
 }
