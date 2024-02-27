@@ -1,7 +1,7 @@
 package Es25_array_2;
 import java.util.Arrays;
 public class Main {
-    public static void main(String args[]){
+    public static void main(String[] args){
       char arrayChar[] = createCharArray();
       char findChar = 'a';
         System.out.println("Array creato:");

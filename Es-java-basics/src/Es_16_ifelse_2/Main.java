@@ -1,7 +1,7 @@
 package Es_16_ifelse_2;
 
 public class Main {
-    public static void main(String args[]){
+    public static void main(String[] args){
         String myText = "Sono un cane: <PAW! PAW!>\n:D :D :D ";
 
         System.out.println("La mia bella stringa: " + myText);

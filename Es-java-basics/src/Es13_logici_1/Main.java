@@ -6,7 +6,7 @@ di confronto è compreso tra due valori specifici e stampi
 il risultato dell'operazione comprensivo dei due limiti (inferiore e superiore)
  */
 public class Main {
-    public static void main(String args[]){
+    public static void main(String[] args){
         int limitSuper = 200;
         int limitInfer = 73;
         int numDiConf = 201;

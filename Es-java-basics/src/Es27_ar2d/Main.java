@@ -1,7 +1,7 @@
 package Es27_ar2d;
 
 public class Main {
-  public static void main(String args[]){
+  public static void main(String[] args){
       int newArr2D[][] = {
               {6, 10, 4},
               {1, 4, 88}

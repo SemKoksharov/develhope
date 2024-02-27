@@ -1,7 +1,7 @@
 package Esrecizio_da_codewars_1;
 
 public class Main {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         System.out.println(isLove(4,3));
     }
 

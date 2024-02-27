@@ -1,7 +1,7 @@
 package Es5_funz_sumAB;
 
 public class Main {
-    public static void main(String args[]){
+    public static void main(String[] args){
         int a = 1;
         int b = 7;
 

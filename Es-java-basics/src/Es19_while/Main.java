@@ -1,7 +1,7 @@
 package Es19_while;
 
 public class Main {
-    public static void main(String args[]){
+    public static void main(String[] args){
         System.out.println(sum(5));
     }
     public static int sum(int limit){

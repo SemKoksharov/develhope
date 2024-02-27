@@ -1,7 +1,7 @@
 package Es17_switch_1;
 
 public class Main {
-    public static void main(String args[]){
+    public static void main(String[] args){
         int numeroDiGiorno = 8;
         System.out.println("Numero di giorno: " + numeroDiGiorno);
         System.out.println("Vuol dire che oggi " + nomeDiGiorno(numeroDiGiorno));
