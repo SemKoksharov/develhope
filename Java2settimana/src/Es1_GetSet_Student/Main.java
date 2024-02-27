@@ -1,4 +1,4 @@
-package Esercizio_1_GetSet_Student;
+package Es1_GetSet_Student;
 
 public class Main {
     public static void main(String[] args) {

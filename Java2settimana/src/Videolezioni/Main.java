@@ -1,23 +1,24 @@
 package Videolezioni;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        Articolo article1 = new Articolo("Pizza napoli",3.99);
-      //  article1.nome = "Pizza napoli";
-      //  article1.prezzo = 3.99;
+        Articolo article1 = new Articolo("Pizza napoli",3.99, 0.1);
+        Articolo article2 = new Articolo("Coca cola",  0.99, 0.22);
 
-        Articolo article2 = new Articolo("Coca cola",  0.99);
-      //  article2.nome = "Coca cola";
-      //  article2.prezzo = 0.99;
+        Carello carello = new Carello(new Articolo[] {article1, article2});
+        System.out.println("### Carello ###");
+        System.out.println("Numero di articoli: " + carello.getArticoli().length);
+        System.out.println("Prezzo finale senza IVA: " + carello.getPrezzoFinale(false));
+        System.out.println("Prezzo finale con IVA: " + carello.getPrezzoFinale(true));
 
-        System.out.println("Hello and welcome!");
-        System.out.println("Articolo 1: " + article1);
-        System.out.println("Articolo 2: " + article2);
+        Articolo article3 = new Articolo("Tiramisu", 2.49, 0.22);
+        carello = new Carello(new Articolo[] {article1,article2,article3});
 
-        Carello carello = new Carello();
-        carello.articoli = new Articolo[] {article1, article2};
-        carello.prezzoFinale = article1.getPrezzo() + article2.getPrezzo();
-
-        System.out.println("Carello: " + carello);
+        System.out.println("### Carello aggiornato ###\n");
+        System.out.println("Numero di articoli: " + carello.getArticoli().length);
+        System.out.println("Prezzo finale senza IVA: " + carello.getPrezzoFinale(false));
+        System.out.println("Prezzo finale con IVA: " + carello.getPrezzoFinale(true));
     }
 }
