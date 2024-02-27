@@ -3,9 +3,13 @@ package Videolezioni;
 import java.util.Arrays;
 
 public class Carello {
-    public double prezzoFinale;
+    private double prezzoFinale;
 
-    public Articolo[] articoli;
+    private Articolo[] articoli;
+
+    public Carello(Articolo[] articoli){
+        this.articoli = articoli;
+    }
 
     @Override
     public String toString() {
