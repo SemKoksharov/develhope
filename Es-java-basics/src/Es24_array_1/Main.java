@@ -1,7 +1,7 @@
 package Es24_array_1;
 
 public class Main {
-    public static void main(String args[]){
+    public static void main(String[] args){
        int arrayNum[] = createArray();
         System.out.println(calcSumOfArrayNumb(arrayNum));
 

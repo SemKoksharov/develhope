@@ -1,7 +1,7 @@
 package Es22_cicli_av_1;
 
 public class Main {
-    public static void main(String args[]){
+    public static void main(String[] args){
         forInterrupt(30);
     }
    private static void forInterrupt(int entredValue){

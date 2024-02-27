@@ -2,7 +2,7 @@
 package Es18_switch_2;
 
 public class Main {
-    public static void main(String args[]){
+    public static void main(String[] args){
         char tipoDiOperazione = 's';
         System.out.println("Carattere: " + tipoDiOperazione);
         System.out.println("Tipo di operazione `e " + nomeDiOperazione(tipoDiOperazione));

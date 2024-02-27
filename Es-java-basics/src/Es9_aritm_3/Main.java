@@ -1,7 +1,7 @@
 package Es9_aritm_3;
 
 public class Main {
-    public static void main(String agrs[]){
+    public static void main(String[] agrs){
         double a = 3.7;
         double b = 19.2;
         double c = 23.12;

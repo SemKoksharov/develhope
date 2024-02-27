@@ -2,7 +2,7 @@ package Es20_ciclofor_1;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String args[]){
+    public static void main(String[] args){
         System.out.println("Inserisci il numero per creare la tabellina");
 
         Scanner input = new Scanner(System.in);

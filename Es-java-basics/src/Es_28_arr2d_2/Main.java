@@ -1,7 +1,7 @@
 package Es_28_arr2d_2;
 
 public class Main {
-    public static void main(String args[]){
+    public static void main(String[] args){
         int matrix[][] = {
                 //    columns
                     {6, 10, 4}, // row
@@ -29,10 +29,10 @@ public class Main {
         return resultMatrix;
     }
     public static void printMatrix(int[][] someMatrix){
-        for (int i = 0; i < someMatrix.length; i++){
+        for (int[] matrix : someMatrix) {
             System.out.println();
-            for (int j = 0; j < someMatrix[i].length; j++ ){
-                System.out.print(someMatrix[i][j] + " ");
+            for (int i : matrix) {
+                System.out.print(i + " ");
             }
 
         }
