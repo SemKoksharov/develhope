@@ -20,7 +20,6 @@ public class Articolo {
 
 
     }
-
     @Override
     public String toString() {
         return "Articolo{" +

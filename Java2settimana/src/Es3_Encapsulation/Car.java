@@ -1,4 +1,5 @@
-package Es2_GetSet_Auto;
+package Es3_Encapsulation;
+
 
 public class Car {
     private String brand;
@@ -6,24 +7,26 @@ public class Car {
     private float engineSize;
     private String carLicensePlateNumber;
 
-    public Car(String brand,String model, float engineSize, String carLicensePlateNumber){
+    public Car(String brand, String model, float engineSize, String carLicensePlateNumber) {
         this.brand = brand;
         this.model = model;
         this.engineSize = engineSize;
         this.carLicensePlateNumber = carLicensePlateNumber;
     }
 
-    public String getBrand(){
+    public String getBrand() {
         return brand;
     }
-    public String getModel(){
+
+    public String getModel() {
         return model;
     }
 
-    public float getEngineSize(){
+    public float getEngineSize() {
         return engineSize;
     }
-    public String getCarLicensePlateNumber(){
+
+    public String getCarLicensePlateNumber() {
         return carLicensePlateNumber;
     }
 
@@ -42,14 +45,4 @@ public class Car {
     public void setCarLicensePlateNumber(String carLicensePlateNumber) {
         this.carLicensePlateNumber = carLicensePlateNumber;
     }
-
-    @Override
-    public String toString() {
-        return "\n ==Car's card==" +
-                "\nbrand: " + brand+
-                "\nmodel: " + model+
-                "\nengineSize: " + engineSize +
-                "\ncarLicensePlateNumber: " + carLicensePlateNumber;
-    }
 }
-
