@@ -1,6 +1,6 @@
-package Esrecizio_da_codewars_1;
+package Esrecizi_plus;
 
-public class Main {
+public class Es3 {
     public static void main(String[] args) {
         System.out.println(isLove(4,3));
     }
