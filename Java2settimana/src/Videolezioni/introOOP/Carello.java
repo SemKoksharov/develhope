@@ -7,9 +7,11 @@ public class Carello {
     private Articolo[] articoli;
 
     public Carello(Articolo[] articoli){
+
         setArticoli(articoli);
     }
     public Articolo[] getArticoli() {
+
         return articoli;
     }
 
@@ -30,7 +32,7 @@ public class Carello {
     @Override
     public String toString() {
         return "Carello{" +
-                "articoli=" + Arrays.toString(articoli) +
+                "articoli=" + Arrays.toString(getArticoli()) +
                 '}';
     }
 }
