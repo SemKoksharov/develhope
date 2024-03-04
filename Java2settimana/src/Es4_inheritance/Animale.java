@@ -1,12 +1,19 @@
 package Es4_inheritance;
 
-public class Animale {
-    String nome;
+public abstract class Animale {
+    private String nome;
 
     Animale(String nome){
         this.nome=nome;
     }
-    public void failVerso(){
-        System.out.println("verso dell'animale");;
+
+    public String getNome() {
+        return nome;
     }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    abstract void failVerso();
 }
