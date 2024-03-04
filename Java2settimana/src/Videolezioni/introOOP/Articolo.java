@@ -1,4 +1,4 @@
-package Videolezioni;
+package Videolezioni.introOOP;
 
 public class Articolo {
     private final String nome;

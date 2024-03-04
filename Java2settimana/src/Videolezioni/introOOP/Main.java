@@ -1,6 +1,4 @@
-package Videolezioni;
-
-import java.util.Arrays;
+package Videolezioni.introOOP;
 
 public class Main {
     public static void main(String[] args) {
