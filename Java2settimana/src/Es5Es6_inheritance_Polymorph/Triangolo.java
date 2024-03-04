@@ -10,7 +10,7 @@ public class Triangolo extends Forma {
         super();
         this.base = base;
         this.altezza = altezza;
-        this.area = base * altezza;
+        this.area = (base * altezza)/2;
     }
 
     public double getBase() {
@@ -39,7 +39,7 @@ public class Triangolo extends Forma {
 
     @Override
     void calcolaArea() {
-        System.out.println("Area di triangolo = " + base*altezza);
+        System.out.println("Area di triangolo = " + (base*altezza)/2);
 
     }
 }

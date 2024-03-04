@@ -9,8 +9,9 @@ public class Main {
 
         Triangolo triangolo1 = new Triangolo(13,29);
         System.out.println("Base di triangolo = " + triangolo1.getBase());
-        System.out.println("Altezza di triangolo getter = " + triangolo1.getAltezza());
-        System.out.println("Area di triangolo metodo calcoloArea = " + triangolo1.getArea());
+        System.out.println("Area di triangolo getter = " + triangolo1.getArea());
+        System.out.println("Area di triangolo metodo calcoloArea:");
         triangolo1.calcolaArea();
+
     }
 }
