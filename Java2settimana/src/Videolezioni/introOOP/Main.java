@@ -7,24 +7,21 @@ public class Main {
         Articolo[] articoli = new Articolo[]{article1, article2};
 
         Carello carello = new Carello(articoli);
-        System.out.println("### Carello ###");
+        System.out.println("### Carello do base ###");
         System.out.println("Numero di articoli: " + carello.getArticoli().length);
-        System.out.println("Prezzo finale senza IVA: " + carello.getPrezzoFinale(false));
-        System.out.println("Prezzo finale con IVA: " + carello.getPrezzoFinale(true));
+        System.out.println("Prezzo finale: " + carello.getPrezzoFinale());
         System.out.println("toString: " + carello);
 
         CarelloSenzaIva carelloSenzaIva = new CarelloSenzaIva(articoli);
         System.out.println("### Carello senza IVA ###");
         System.out.println("Numero di articoli: " + carelloSenzaIva.getArticoli().length);
-        System.out.println("Prezzo finale senza IVA: " + carelloSenzaIva.getPrezzoFinale(false));
-        System.out.println("Prezzo finale con IVA: " + carelloSenzaIva.getPrezzoFinale(true));
+        System.out.println("Prezzo finale: " + carelloSenzaIva.getPrezzoFinale());
         System.out.println("toString: " + carelloSenzaIva);
 
         CarelloConIva carelloConIva = new CarelloConIva(articoli);
         System.out.println("### Carello con IVA ###");
         System.out.println("Numero di articoli: " + carelloConIva.getArticoli().length);
-        System.out.println("Prezzo finale senza IVA: " + carelloConIva.getPrezzoFinale(false));
-        System.out.println("Prezzo finale con IVA: " + carelloConIva.getPrezzoFinale(true));
+        System.out.println("Prezzo finale: " + carelloConIva.getPrezzoFinale());
         System.out.println("toString: " + carelloConIva);
     }
 }

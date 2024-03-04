@@ -19,13 +19,8 @@ public class Carello {
         this.articoli = articoli;
     }
 
-        public double getPrezzoFinale(boolean conIva) {
-           double prezzoFinale = 0.0;
-
-            for (Articolo articolo : articoli) {
-                prezzoFinale += articolo.getPrezzo(conIva);
-            }
-            return prezzoFinale;
+        public double getPrezzoFinale() {
+            return 0.0;
         }
 
 
