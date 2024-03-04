@@ -1,13 +1,16 @@
-package Es5_inheritance_1;
+package Es5Es6_inheritance_Polymorph;
 
 public class Rettangolo extends Forma{
     private double base;
     private double altezza;
+    private double area;
 
-    public Rettangolo(double base, double area) {
+
+    public Rettangolo(double base, double altezza) {
         super();
         this.base=base;
         this.altezza=altezza;
+        this.area = base*altezza;
     }
 
     public double getBase() {
@@ -28,7 +31,7 @@ public class Rettangolo extends Forma{
 
     @Override
     void calcolaArea() {
-        System.out.println("Area di rettangolo: " + base*altezza);
+        System.out.println("Area di rettangolo: " + area);
     }
 
 }
