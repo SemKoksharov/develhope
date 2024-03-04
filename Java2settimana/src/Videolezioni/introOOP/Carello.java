@@ -2,7 +2,7 @@ package Videolezioni.introOOP;
 
 import java.util.Arrays;
 
-public class Carello {
+public abstract class Carello {
    //  private double prezzoFinale;
     private Articolo[] articoli;
 
@@ -19,9 +19,7 @@ public class Carello {
         this.articoli = articoli;
     }
 
-        public double getPrezzoFinale() {
-            return 0.0;
-        }
+        public abstract double getPrezzoFinale();
 
 
     @Override
