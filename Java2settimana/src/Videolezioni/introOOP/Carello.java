@@ -2,14 +2,7 @@ package Videolezioni.introOOP;
 
 import java.util.Arrays;
 
-public abstract class Carello {
-   //  private double prezzoFinale;
-    private Articolo[] articoli;
-
-    public Carello(Articolo[] articoli){
-
-        setArticoli(articoli);
-    }
+interface Carello {
     public Articolo[] getArticoli() {
 
         return articoli;
@@ -19,7 +12,7 @@ public abstract class Carello {
         this.articoli = articoli;
     }
 
-    protected abstract boolean isIva();
+    boolean isIva();
     public double getPrezzoFinale() {
         double prezzoFinale = 0.0;
 
@@ -29,13 +22,6 @@ public abstract class Carello {
         return prezzoFinale;
     }
 
-
-    @Override
-    public String toString() {
-        return "Carello{" +
-                "articoli=" + Arrays.toString(getArticoli()) +
-                '}';
-    }
 }
 
 

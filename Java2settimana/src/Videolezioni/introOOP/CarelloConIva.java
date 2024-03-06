@@ -2,9 +2,12 @@ package Videolezioni.introOOP;
 
 import java.util.Arrays;
 
-public class CarelloConIva extends Carello{
+public class CarelloConIva extends Carello {
+
+    private Articolo[] articoli;
+
     public CarelloConIva(Articolo[] articoli) {
-        super(articoli);
+        setArticoli(articoli);
     }
 
     @Override

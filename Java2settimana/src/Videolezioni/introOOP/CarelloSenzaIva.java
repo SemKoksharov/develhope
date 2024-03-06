@@ -3,10 +3,11 @@ package Videolezioni.introOOP;
 import java.util.Arrays;
 
 public class CarelloSenzaIva extends Carello {
-    public CarelloSenzaIva(Articolo[] articoli) {
-        super(articoli);
-    }
+    private Articolo[] articoli;
 
+    public CarelloSenzaIva(Articolo[] articoli) {
+        setArticoli(articoli);
+    }
     @Override
     protected boolean isIva() {
         return false;
