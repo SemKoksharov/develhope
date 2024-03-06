@@ -7,14 +7,11 @@ public class CarelloConIva extends Carello{
         super(articoli);
     }
 
-    public double getPrezzoFinale() {
-        double prezzoFinale = 0.0;
-
-        for (Articolo articolo : getArticoli()) {
-            prezzoFinale += articolo.getPrezzo(true);
-        }
-        return prezzoFinale;
+    @Override
+    protected boolean isIva() {
+        return true;
     }
+
     @Override
     public String toString() {
         return "Carello{" +

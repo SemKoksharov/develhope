@@ -19,7 +19,15 @@ public abstract class Carello {
         this.articoli = articoli;
     }
 
-        public abstract double getPrezzoFinale();
+    protected abstract boolean isIva();
+    public double getPrezzoFinale() {
+        double prezzoFinale = 0.0;
+
+        for (Articolo articolo : getArticoli()) {
+            prezzoFinale += articolo.getPrezzo(isIva());
+        }
+        return prezzoFinale;
+    }
 
 
     @Override
