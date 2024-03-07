@@ -1,5 +1,4 @@
-package es_live;
-import java.sql.Array;
+package DiceGame;
 
 /*
 Описание упражнения:

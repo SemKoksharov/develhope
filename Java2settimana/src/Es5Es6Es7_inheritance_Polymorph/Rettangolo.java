@@ -1,4 +1,4 @@
-package Es5Es6_inheritance_Polymorph;
+package Es5Es6Es7_inheritance_Polymorph;
 
 public class Rettangolo extends Forma{
     private double base;

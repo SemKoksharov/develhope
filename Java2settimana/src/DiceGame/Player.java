@@ -1,4 +1,4 @@
-package es_live;
+package DiceGame;
 
 public class Player {
     private String name;
