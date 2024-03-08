@@ -6,10 +6,6 @@ package Es_8_interface;
 
 public class Main {
     public static void main(String[] args) {
-        //nuova forma generica(poligono)
-        Forma poligono = new Forma(54, 27.3, 58.666);
-        poligono.calcolaArea();
-
         //rettangolo
 
         Rettangolo rettangolo = new Rettangolo(12, 25.8);
@@ -28,6 +24,11 @@ public class Main {
         System.out.print(treangolo.getAltezza()); // stampo altezza mod.
 
         treangolo.calcolaArea(); // stampo area di triangolo mod.
+        System.out.println("POLYMORPH:");
+        Forma [] formas = {treangolo, rettangolo};
+        for (int i = 0; i < formas.length; i++){
+            formas[i].calcolaArea();
+        }
     }
 
 }

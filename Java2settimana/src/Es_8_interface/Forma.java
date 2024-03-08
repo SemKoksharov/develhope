@@ -1,7 +1,7 @@
 package Es_8_interface;
 
 //Poligono generico
-public class Forma implements Es_8_interface.interfaceForma.Forma {
+public abstract class Forma  {
     private int numeroDiLato;
     private double lunghezzaDiLato;
     private double altezza;
@@ -36,10 +36,7 @@ public class Forma implements Es_8_interface.interfaceForma.Forma {
         this.altezza = altezza;
     }
 
-    @Override
-    public void calcolaArea() {
-        System.out.println("Area di Forma(Poligono) = " + (numeroDiLato * lunghezzaDiLato * altezza) / 2);
-    }
+    public abstract void calcolaArea();
 
     @Override
     public String toString() {
