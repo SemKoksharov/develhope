@@ -7,7 +7,6 @@ public class Main {
 
         System.out.println("Risultato: " + divide(6, 0));
         System.out.println("Risultato: " + divide(6, 2));
-        System.out.println("Risultato: " + divide(10, 2));
     }
 
     public static double divide(int num1, int num2) {
