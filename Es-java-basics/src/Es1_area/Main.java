@@ -5,6 +5,6 @@ public class Main {
         double base = 10;
         double altezza = 25.5;
         double area = (base * altezza) / 2;
-        System.out.println("Area di triangolo = " + area);
+        System.out.println("Area di triangolo : " + area);
     }
 }
