@@ -15,3 +15,4 @@ public class Main {
             return true;
         } else throw new ArithmeticException("Errore! Il numero deve essere tra 1 e 17!");
     }
+}
