@@ -4,19 +4,15 @@ package es3_trycatch;
   e catturi l'eccezione leggendone il messaggio. */
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println("Risultato: " + divide(6, 0));
-        System.out.println("Risultato: " + divide(6, 2));
+        try {
+            System.out.println("Risultato di divisione = " + divide(6, 7));
+        } catch (ArithmeticException ae) {
+            System.out.println("Errore: " + ae.getMessage());
+            System.out.println("Risultato di divisione = " + Double.NaN);
+        }
     }
 
-    public static double divide(int num1, int num2) {
-        double result;
-        try {
-            result = num1 / num2;
-        } catch (ArithmeticException e) {
-            System.out.println("Errore: " + e.getMessage());
-            return Double.NaN;
-        }
-        return result;
+    public static double divide(double  num1, double num2) throws ArithmeticException {
+        return num1 / num2;
     }
 }

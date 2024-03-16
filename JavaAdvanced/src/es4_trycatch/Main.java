@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         int[] numArr = {2, 0, 67, 3};
         Random rand = new Random();
-        // Generate random integers in range 0 to 999
+        // Generate random integers
 
         for (int i = 0; i < 50; i++) {
             int idx = rand.nextInt(8);
