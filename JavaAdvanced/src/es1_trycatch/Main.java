@@ -2,20 +2,16 @@ package es1_trycatch;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(controlAndCreateException(18));
-        System.out.println("Cosi funziona senza errori: "+controlAndCreateException(8));
+        try {
+            controlAndCreateException(17);
+        } catch (ArithmeticException ae) {
+            System.out.println(ae.getMessage());
+        }
     }
-    public static boolean controlAndCreateException(int num){
-       try {if (num >= 1 && num <= 17){
+
+    public static boolean controlAndCreateException(int num) throws ArithmeticException {
+        if (num >= 1 && num <= 17) {
+            System.out.println("17 >=Numero >=1\n" + true);
             return true;
-        } else throw new ArithmeticException();
-       } catch (ArithmeticException e) {
-           System.out.println("Errore: " + e);
-       } catch (Exception e) {
-           System.out.println("Altro errore: " + e);
-       } finally {
-           System.out.println("Comunque il programma `e stato eseguito");
-       }
-        return false;
+        } else throw new ArithmeticException("Errore! Il numero deve essere tra 1 e 17!");
     }
-}
