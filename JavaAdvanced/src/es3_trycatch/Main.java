@@ -5,14 +5,17 @@ package es3_trycatch;
 public class Main {
     public static void main(String[] args) {
         try {
-            System.out.println("Risultato di divisione = " + divide(6, 7));
+            System.out.println("Risultato di divisione = " + divide(6,0));
         } catch (ArithmeticException ae) {
             System.out.println("Errore: " + ae.getMessage());
             System.out.println("Risultato di divisione = " + Double.NaN);
         }
     }
 
-    public static double divide(double  num1, double num2) throws ArithmeticException {
+    public static double divide(double num1, double num2) throws ArithmeticException {
+        if (num2 == 0) {
+            throw new ArithmeticException("Divisione per 0!");
+        }
         return num1 / num2;
     }
 }
