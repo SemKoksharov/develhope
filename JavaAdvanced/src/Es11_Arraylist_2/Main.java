@@ -59,9 +59,6 @@ public class Main {
         System.out.println("Lista ordinata per eta:");
         System.out.println(studenti);
 
-
-
-
     }
 
 }
