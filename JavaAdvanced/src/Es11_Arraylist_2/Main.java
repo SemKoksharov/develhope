@@ -26,12 +26,21 @@ public class Main {
         Studente studente6 = new Studente("Ksenia", 27);
         Studente studente7 = new Studente("Vova", 25);
         Studente studente8 = new Studente("Natasha", 20);
+        Studente studente9 = new Studente("Roma", 18);
+        Studente studente10 = new Studente("Sergei", 23);
+        Studente studente11 = new Studente("Pasha", 30);
+        Studente studente12 = new Studente("Alla", 28);
 
-        //ho aggiunto ancora 4 studenti
+
+        //ho aggiunto ancora 8 studenti
         studenti.add(studente5);
         studenti.add(studente6);
         studenti.add(studente7);
         studenti.add(studente8);
+        studenti.add(studente9);
+        studenti.add(studente10);
+        studenti.add(studente11);
+        studenti.add(studente12);
 
         //stampo lista di studenti aggiornata
         System.out.println("Lista aggiornata");
@@ -39,6 +48,13 @@ public class Main {
         System.out.println();
 
         //ho creato comparator per confrontare eta di oggetti tipo Studente
+
+        Comparator<Studente> byName = new Comparator<Studente>() {
+            @Override
+            public int compare(Studente o1, Studente o2) {
+                return o1.getNome().compareToIgnoreCase(o2.getNome());
+            }
+        };
         Comparator<Studente> byAge = new Comparator<Studente>() {
             @Override
             public int compare(Studente o1, Studente o2) {
@@ -49,7 +65,6 @@ public class Main {
         Collections.sort(studenti, byAge);
         System.out.println("Lista ordinata per eta:");
         System.out.println(studenti);
-
     }
 
 }
