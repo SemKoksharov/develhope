@@ -1,5 +1,7 @@
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Concesseonaria {
     private String nome;
@@ -69,12 +71,20 @@ public class Concesseonaria {
         }
         System.out.println("Auto trovati:\n" + Arrays.toString(result));
     }
-    /*
-
-Realizzare un metodo che permetta di rimuovere un auto dalla concessionaria
-Realizzare un metodo che permetta di effettuare una ricerca delle auto presenti nella concessionaria in base alla marca.
-Realizzare un metodo che non prende in input alcun parametro e restituisce una mappa che tiene traccia del conteggio delle auto presenti nella concessionaria in base alla marca.
-
-     */
+    public Map<String, Integer> conteggioPerMarca(){
+        //ho creato nuova mappa (String, Integer), la chiamo "conteggio"
+        Map<String, Integer> conteggio = new HashMap<>();
+        // cicliamo sulla lista di tutti Auto che abbiamo
+        for (Auto auto : lista ){
+            // Otteniamo marca di auto corrente.
+            String marca = auto.getMarca();
+            // Aggiungiamo una voce alla mappa "conteggio", dove la chiave è la marca dell'auto,
+            // e il valore è il numero di auto di quella marca nella collezione.
+            // Se la marca è già presente nella mappa, aumentiamo il numero di 1.
+            // In caso contrario, se la marca non è stata trovata, aggiungiamo una nuova voce con un conteggio di 1.
+            conteggio.put(marca, conteggio.getOrDefault(marca, 0)+1);
+        }
+        return conteggio;
+    }
 }
 

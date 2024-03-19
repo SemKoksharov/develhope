@@ -1,5 +1,3 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         Concesseonaria concesseonaria = new Concesseonaria("Auto World");
@@ -14,6 +12,11 @@ public class Main {
         concesseonaria.stampaAuto();
         concesseonaria.eliminaAuto(auto);
         concesseonaria.cercaAuto("ToyOta");
-
-        }
+        System.out.println(concesseonaria.conteggioPerMarca());
+        concesseonaria.addAuto(auto);
+        System.out.println(concesseonaria.conteggioPerMarca());
+        Auto auto2 = new Auto("Opel", "Corsa");
+        concesseonaria.addAuto(auto2);
+        System.out.println(concesseonaria.conteggioPerMarca());
     }
+}
