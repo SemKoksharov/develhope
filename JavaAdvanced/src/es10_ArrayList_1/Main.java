@@ -9,10 +9,8 @@ Creare un ArrayList con n elementi e stamparlo in console.
 Aggiungere 4 elementi alla collezione e stampare la collezione aggiornata in console
  */
 
-import java.security.Security;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Main {
 
