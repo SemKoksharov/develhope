@@ -22,6 +22,7 @@ public class Main {
         //stampo lista di studenti
         System.out.println(studenti);
         System.out.println();
+
         Studente studente5 = new Studente("Alena", 26);
         Studente studente6 = new Studente("Ksenia", 27);
         Studente studente7 = new Studente("Vova", 25);
