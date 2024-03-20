@@ -1,8 +1,5 @@
 package Es11_Arraylist_2;
 
-import java.util.Collections;
-import java.util.Comparator;
-
 public class Studente {
     private String nome;
     private int age;
