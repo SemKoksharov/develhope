@@ -49,13 +49,6 @@ public class Main {
         System.out.println();
 
         //ho creato comparator per confrontare eta di oggetti tipo Studente
-
-        Comparator<Studente> byName = new Comparator<Studente>() {
-            @Override
-            public int compare(Studente o1, Studente o2) {
-                return o1.getNome().compareToIgnoreCase(o2.getNome());
-            }
-        };
         Comparator<Studente> byAge = new Comparator<Studente>() {
             @Override
             public int compare(Studente o1, Studente o2) {
