@@ -20,9 +20,7 @@ public class Main {
 
         try {
             System.out.println("Risultato = " + calcolaBigDecimal(num1, num2, Operazione.ADDIZIONE));
-        } catch (ArithmeticException e) {
-            System.out.println(e.getMessage());
-        } catch (NullPointerException e){
+        } catch (ArithmeticException | NullPointerException e) {
             System.out.println(e.getMessage());
         }
 
@@ -30,50 +28,31 @@ public class Main {
 
     public static BigDecimal calcolaBigDecimal(BigDecimal num1, BigDecimal num2, Operazione operazione) throws ArithmeticException, NullPointerException {
         if (num1 != null && num2 != null) {
+            switch (operazione) {
 
-        } else throw new NullPointerException("Il valore di num1 e/o num2 non puo essere null!");
-        switch (operazione) {
-
-            case ADDIZIONE -> {
-                if (num1 != null && num2 != null) {
+                case ADDIZIONE -> {
                     return num1.add(num2);
-                } else throw new NullPointerException("Il valore di num1 e/o num2 non puo essere null!");
-            }
-            case SOTTRAZIONE -> {
-                if (num1 != null && num2 != null) {
+                }
+                case SOTTRAZIONE -> {
                     return num1.subtract(num2);
-                } else throw new NullPointerException("Il valore di num1 e/o num2 non puo essere null!");
-
-
-            }
-            case MOLTIPLICAZIONE -> {
-                if (num1 != null && num2 != null) {
+                }
+                case MOLTIPLICAZIONE -> {
                     return num1.multiply(num2);
-                } else throw new NullPointerException("Il valore di num1 e/o num2 non puo essere null!");
-
-            }
-            case DIVISIONE -> {
-                if (num1 != null && num2 != null && num2.compareTo(BigDecimal.ZERO) != 0) {
-                    return num1.divide(num2, RoundingMode.HALF_UP);
-
-                } else throw new ArithmeticException("Divisione per 0!");
-            }
-            case MIN -> {
-                if (num1 != null && num2 != null) {
+                }
+                case DIVISIONE -> {
+                    if (num2.compareTo(BigDecimal.ZERO) != 0) {
+                        return num1.divide(num2, RoundingMode.HALF_UP);
+                    } else throw new ArithmeticException("Divisione per 0!");
+                }
+                case MIN -> {
                     return num1.min(num2);
-                } else throw new NullPointerException("Il valore di num1 e/o num2 non puo essere null!");
-
-            }
-            case MAX -> {
-                if (num1 != null && num2 != null) {
+                }
+                case MAX -> {
                     return num1.max(num2);
-                } else throw new NullPointerException("Il valore di num1 e/o num2 non puo essere null!");
+                }
+                case null -> throw new NullPointerException("Operazione puo essere null!");
+            }
+        } else throw new NullPointerException("Il valore di num1 e/o num2 non puo essere null!");
 
-            }
-            case null -> {
-                throw new NullPointerException("Operazione puo essere null!");
-            }
-        }
     }
 }
-
