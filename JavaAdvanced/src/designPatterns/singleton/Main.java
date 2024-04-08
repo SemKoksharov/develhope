@@ -12,7 +12,7 @@ si cambieranno le informazioni e poi si stamperanno a video
 public class Main {
     public static void main(String[] args) {
 
-        //user che ha nome e eta di default!
+        //user che ha nome ed eta di default!
         User user = User.getUser();
 
         //controllo
