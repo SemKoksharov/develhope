@@ -1,38 +1,57 @@
 package co.develhopestudy.demoweb;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import co.develhopestudy.demoweb.models.User;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/ciao")
 public class HWController {
 
-    @GetMapping("/hw/")
+    @GetMapping("/hw")
     public String helloWorld() {
         return "Hello World! / Привет Мир!";
     }
 
-    @GetMapping("/howau/")
+    @GetMapping("/howau")
     public String howAreYou(@RequestParam(required = true)
-                       String name,
+                            String name,
 
-                       @RequestParam(required = false, defaultValue = "")
-                       String surname) {
+                            @RequestParam(required = false, defaultValue = "")
+                            String surname) {
 
         return "Hello " + name + " " + surname +
                 " How are you?";
     }
 
+//  -------------------------------------------------- ESERCIZO 1 --------------------------------------------------
+//    Scrivi una applicazione web Spring Boot che alla endpoint GET v1/ciao?nome=Giuseppe&provincia=Lombardia
+//    risponde con "Ciao Giuseppe, com'è il tempo in Lombardia?"
+
     @GetMapping
     public String tempoProvincia(@RequestParam(required = true)
-                       String nome,
+                                 String nome,
 
-                       @RequestParam(required = false, defaultValue = "tua provincia")
-                       String provincia) {
+                                 @RequestParam(required = false, defaultValue = "tua provincia")
+                                 String provincia) {
 
         return "Ciao " + nome + ", " +
-                "com`e il tempo in "+ provincia+"?";
+                "com`e il tempo in " + provincia + "?";
     }
+//  ------------------------------------------------------ END ------------------------------------------------------
+
+    @GetMapping("/show_object/{id}")
+    public User showUserJson(@PathVariable long id,
+
+                             @RequestParam(required = true)
+                             String name,
+
+                             @RequestParam(required = false, defaultValue = "")
+                             String surname) {
+        return User.builder()
+                .id(id)
+                .nome(name)
+                .cognome(surname)
+                .build();
+    }
+ //---------------------------- ESERCIZIO SI TROVA IN CLASSE Es2NewCiaoTestController --------------------------------
 }
