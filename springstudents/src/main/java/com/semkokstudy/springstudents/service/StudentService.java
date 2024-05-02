@@ -9,7 +9,7 @@ public interface StudentService {
     List<Student> findAllStudents();
 
     void saveStudent(Student student);
-    Student finByEmail(String email);
+    Student findStudentByEmail(String email);
     Student updateStudent(Student student);
-    void deleteStudent(String email);
+    void deleteStudentByEmail(String email);
 }

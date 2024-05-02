@@ -17,21 +17,21 @@ public class StudentController {
 
     @GetMapping
     public List<Student> findAllStudent() {
-        //todo закончить метод
         return studentService.findAllStudents();
     }
 
-    @PostMapping("save_student")
+    @PostMapping("/save_student")
     public String saveStudent(@RequestBody Student student) {
         studentService.saveStudent(student);
         return "------------ Success! ------------" +
                 "\nSaved Student: " + student.getName() + " " + student.getSurname()+ " " +
                 "\nEmail: " + student.getEmail();
+
     }
 
     @GetMapping("/{email}")
     public Student findByEmail(@PathVariable("email") String email) {
-        return studentService.finByEmail(email);
+        return studentService.findStudentByEmail(email);
     }
 
     @PutMapping
@@ -39,9 +39,9 @@ public class StudentController {
         return studentService.updateStudent(student);
     }
 
-    @DeleteMapping("delete_student/{email}")
-    private void deleteStudent(@PathVariable("email") String email) {
-        studentService.deleteStudent(email);
+    @DeleteMapping("/delete/{email}")
+    private void deleteStudentByEmail(@PathVariable("email") String email) {
+        studentService.deleteStudentByEmail(email);
     }
 
 

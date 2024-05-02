@@ -9,8 +9,7 @@ import java.util.stream.IntStream;
 
 @Repository
 public class InMemoryStudentDAO {
-
-    private final List<Student> STUDENTS = new ArrayList<>();
+private final List<Student> STUDENTS = new ArrayList<>();
 
 
     public List<Student> findAllStudents() {
@@ -24,7 +23,7 @@ public class InMemoryStudentDAO {
     }
 
 
-    public Student finByEmail(String email) {
+    public Student findStudentByEmail(String email) {
         return STUDENTS.stream()
                 .filter(element -> element.getEmail().equals(email))
                 .findFirst()
@@ -44,8 +43,8 @@ public class InMemoryStudentDAO {
     }
 
 
-    public void deleteStudent(String email) {
-        var student = finByEmail(email);
+    public void deleteStudentByEmail(String email) {
+        var student = findStudentByEmail(email);
         if (student != null){
             STUDENTS.remove(student);
         }

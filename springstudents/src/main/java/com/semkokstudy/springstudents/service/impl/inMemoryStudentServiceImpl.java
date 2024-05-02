@@ -11,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 public class inMemoryStudentServiceImpl implements StudentService {
 
+
     private final InMemoryStudentDAO repository;
     @Override
     public List<Student> findAllStudents() {
@@ -23,8 +24,8 @@ public class inMemoryStudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student finByEmail(String email) {
-        return repository.finByEmail(email);
+    public Student findStudentByEmail(String email) {
+        return repository.findStudentByEmail(email);
     }
 
     @Override
@@ -33,7 +34,7 @@ public class inMemoryStudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void deleteStudent(String email) {
-        repository.deleteStudent(email);
+    public void deleteStudentByEmail(String email) {
+        repository.deleteStudentByEmail(email);
     }
 }
