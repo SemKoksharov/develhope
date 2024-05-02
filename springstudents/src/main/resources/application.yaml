@@ -1,1 +1,5 @@
-spring.application.name=springstudents
+spring.datasource.url=jdbc:mysql://localhost:3306/students_db
+spring.datasource.username=semkok66
+spring.datasource.password=Krevedk0!
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=create

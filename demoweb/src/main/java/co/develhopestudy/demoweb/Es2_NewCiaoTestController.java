@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v2")
-public class NewCiaoTestController {
+public class Es2_NewCiaoTestController {
 //  -------------------------------------------------- ESERCIZO 2 --------------------------------------------------
 //    Scrivi una applicazione web Spring Boot che alla endpoint GET v2/ciao/Lombardia?nome=Giuseppe risponde
 //    con un oggetto JSON formato cosi:
@@ -16,7 +16,7 @@ public class NewCiaoTestController {
 //            "saluto": "Ciao Giuseppe, com'è il tempo in Lombardia?"
 //    }
 
-    @GetMapping("{provincia}")
+    @GetMapping("/ciao/{provincia}")
     public User tempoProvinciaV2(@PathVariable String provincia,
 
                                  @RequestParam(required = true)
