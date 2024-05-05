@@ -1,4 +1,4 @@
-package co.develhopestudy.demoweb;
+package co.develhopestudy.demoweb.controllers;
 
 import co.develhopestudy.demoweb.models.User;
 import org.springframework.web.bind.annotation.*;
