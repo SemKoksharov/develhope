@@ -1,8 +1,9 @@
 package co.develhopestudy.demoweb.controllers;
 
-import co.develhopestudy.demoweb.models.User;
+import co.develhopestudy.demoweb.services.NameService;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-//  -------------------------------------------------- ESERCIZO 1 --------------------------------------------------
+//  -------------------------------------------------- ESERCIZO 3 --------------------------------------------------
 
 //scrivi una applicazione web Spring Boot con:
 //NameController dove si mappa il parametro name per:
@@ -10,20 +11,21 @@ import org.springframework.web.bind.annotation.*;
 //restuiture il nome al contrario (es. da John a nhoJ, usando StringBuilder) alla chiamata POST
 //testare le chiamate del API endpoint usando Postman
 
-
 @RestController
 @RequestMapping("/api/v3/name")
+@AllArgsConstructor
 public class NameController {
+
+    private final NameService nameService;
 
     @GetMapping("/{name}")
     public String name(@PathVariable String name) {
-        return name;
+        return nameService.returnName(name);
     }
 
     @PostMapping("/invert/{name}")
     public String invert(@PathVariable String name) {
-        StringBuilder sb = new StringBuilder(name);
-        return sb.reverse().toString();
+       return nameService.invertName(name);
     }
 }
 
