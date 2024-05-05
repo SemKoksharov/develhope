@@ -34,8 +34,8 @@ public class StudentController {
         return studentService.findStudentByEmail(email);
     }
 
-    @PutMapping
-    public Student updateStudent(Student student) {
+    @PutMapping("/upd")
+    public Student updateStudent(@RequestBody Student student) {
         return studentService.updateStudent(student);
     }
 

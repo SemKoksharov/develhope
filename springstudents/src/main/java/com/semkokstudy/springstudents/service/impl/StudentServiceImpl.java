@@ -3,6 +3,7 @@ package com.semkokstudy.springstudents.service.impl;
 import com.semkokstudy.springstudents.model.Student;
 import com.semkokstudy.springstudents.repository.StudentRepository;
 import com.semkokstudy.springstudents.service.StudentService;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import java.util.List;
 @Service
 @Primary
 @AllArgsConstructor
+@Transactional
 public class StudentServiceImpl implements StudentService {
 
     private final StudentRepository repository;
