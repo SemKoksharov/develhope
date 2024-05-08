@@ -1,16 +1,9 @@
 package com.semkokstudy.springstudents.model;
 
-import lombok.*;
+import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDate;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
-import org.springframework.lang.NonNull;
 
 @Data
 @Entity
