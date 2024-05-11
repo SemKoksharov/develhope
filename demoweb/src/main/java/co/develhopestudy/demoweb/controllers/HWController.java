@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 public class HWController {
 
     @GetMapping("/hw")
+
     public String helloWorld() {
         return "Hello World! / Привет Мир!";
     }

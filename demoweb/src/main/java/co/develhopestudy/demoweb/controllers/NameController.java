@@ -24,6 +24,7 @@ public class NameController {
     }
 
     @PostMapping("/invert/{name}")
+    @CrossOrigin(origins = "http://localhost:3346" )
     public String invert(@PathVariable String name) {
        return nameService.invertName(name);
     }
