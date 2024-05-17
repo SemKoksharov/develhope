@@ -1,16 +1,23 @@
 package com.develhope.h2mockdbexample.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "students")
+public class Student {
 
     @Id
     @GeneratedValue
     private Long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private String surname;
+
+    @Column(unique = true, nullable = false)
+    private String email;
+
 
 }
