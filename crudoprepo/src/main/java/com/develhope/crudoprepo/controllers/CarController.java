@@ -26,7 +26,7 @@ public class CarController {
     }
 
     @GetMapping
-    public Object getAllCars(@RequestParam(required = false) Optional<Integer> page, @RequestParam(required = false) Optional<Integer> size) {
+    public Page<Car> getAllCars(@RequestParam(required = false) Optional<Integer> page, @RequestParam(required = false) Optional<Integer> size) {
         if (page.isPresent() && size.isPresent()) {
             Sort sort = Sort.by(new Sort.Order(Sort.Direction.DESC, "type"));
 
@@ -35,8 +35,9 @@ public class CarController {
 
             return carsPaginated;
         } else {
-            List<Car> cars = carRepository.findAll();
-            return cars;
+          //return empty page
+    // SAY NO TO RETURN OF OBJECT!!!!!
+            return Page.empty();
         }
     }
 
@@ -78,13 +79,12 @@ public class CarController {
 
 
     @DeleteMapping("/delete/{id}")
-    public Object deleteById(@PathVariable Long id) {
+    public ResponseEntity<HttpStatus> deleteById(@PathVariable Long id) {
         if (!carRepository.existsById(id)) {
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         }
         carRepository.deleteById(id);
-        return "Car " + "with id: " +
-                id + "  deleted";
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @DeleteMapping("/delete_many")
