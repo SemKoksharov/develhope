@@ -5,7 +5,8 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "users")
 public class User {
-
+// HO FATTO STA VOLTA USER A POSTO DI STUDENTE PERCHE LA SCORSA VOLTA HO FATTO A CONTRARIO!!
+    // AGGIUNTO ANCHE VALIDAZIONE!
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
