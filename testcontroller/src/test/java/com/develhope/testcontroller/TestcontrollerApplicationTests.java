@@ -153,45 +153,4 @@ class UserControllerTest {
 				.andReturn();
 	}
 
-
-//	@Test
-//	void contextLoads() {
-//		assertThat(userController).isNotNull();
-//	}
-//
-//	@Test
-//	void restTemplateTest(){
-//		String output = this.restTemplate.getForObject("http://127.0.0.1:" + port+ "/" ,String.class);
-//		assertThat(output).contains("Hello world!");
-//	}
-//
-//	@Test
-//	void testGetUser() {
-//		User user = this.restTemplate.getForObject("http://127.0.0.1:" + port+ "/user", User.class);
-//		assertThat(user.getName()).isEqualTo("Sem");
-//		assertThat(user.getSurname()).isEqualTo("Kok");
-//		assertThat(user.getEmail()).isEqualTo("kokshse196@proton.me");
-//		assertThat(user.getPassword()).isEqualTo("password");
-//	}
-//
-//	@Test
-//	void testMockMvc()throws Exception{
-//		this.mockMvc.perform(get("/"))
-//				.andDo(print())
-//				.andExpect(content()
-//						.string(containsString
-//								("Hello world!")));
-//	}
-//
-//	@Test
-//	void testMockMvcUser()throws Exception{
-//		this.mockMvc.perform(get("/user"))
-//				.andDo(print())
-//				.andExpect(status().isOk())
-//				.andExpect(jsonPath("$.name").value("Sem"))
-//				.andExpect(jsonPath("$.surname").value("Kok"))
-//				.andExpect(jsonPath("$.email").value("kokshse196@proton.me"))
-//				.andExpect(jsonPath("$.password").value("password"));
-//	}
-
 }
