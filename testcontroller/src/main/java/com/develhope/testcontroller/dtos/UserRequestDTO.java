@@ -7,7 +7,9 @@ import jakarta.validation.constraints.Size;
 import org.springframework.lang.NonNull;
 
 public class UserRequestDTO {
+
     @Valid
+
     @NotNull(message = "Name is null!")
     @NotBlank(message = "Name is blank!")
     @Size(min = 2, max = 200, message = "Name must be min 2 characters, max 200 characters")

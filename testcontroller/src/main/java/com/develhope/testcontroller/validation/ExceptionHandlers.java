@@ -13,7 +13,7 @@ public class ExceptionHandlers {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public Map<String, String> handleValidationExcepcions(MethodArgumentNotValidException ex){
+    public Map<String, String> handleValidationExcepcions(MethodArgumentNotValidException ex) {
 
         Map<String, String> errors = new HashMap<>();
 
