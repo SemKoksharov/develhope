@@ -59,6 +59,7 @@ public class MonthInterceptor implements HandlerInterceptor {
                                 "nope"
                         ));
             }
+            response.setStatus(HttpStatus.OK.value());
 
             return true;
         } else {
