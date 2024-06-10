@@ -25,7 +25,7 @@ public class CarController {
         this.carRepository = carRepository;
     }
 
-    @GetMapping
+    @GetMapping,
     public Page<Car> getAllCars(@RequestParam(required = false) Optional<Integer> page, @RequestParam(required = false) Optional<Integer> size) {
         if (page.isPresent() && size.isPresent()) {
             Sort sort = Sort.by(new Sort.Order(Sort.Direction.DESC, "type"));
