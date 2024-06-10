@@ -39,7 +39,7 @@ public class APILoggingInterceptor implements HandlerInterceptor {
                 " :: Sent in handler :: End Time = " + LocalDateTime.now());
 
         System.out.println("[ API_LOGGING_INTERCEPTOR_MSG ] :: Request URL :: "+ request.getRequestURL().toString() +
-                " :: Sent in handler :: Time taken = " + (System.currentTimeMillis()- startTime) + "milliseconds");
+                " :: Sent in handler :: Time taken = " + (System.currentTimeMillis()- startTime) + " milliseconds");
 
         if(ex != null){
             System.out.println("The exception is " + ex.getMessage());

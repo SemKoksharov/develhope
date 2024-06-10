@@ -3,6 +3,7 @@ package com.develhope.springiterceptors.interceptors;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,10 +14,11 @@ public class LegacyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        if (!request.getRequestURL().toString().contains("/legacy")) {
+        if (! request.getRequestURL().toString().contains("/legacy")) {
             return true;
         } else {
-            response.setStatus(404);
+            response.setStatus(HttpStatus.GONE.value());
+
             throw new Exception("::::::[ LEGACY_INTERCEPTOR_MSG ] :::::: ENDPOINT " +
                     request.getRequestURL().toString() + " IS BLOCKED ::::::");
         }
