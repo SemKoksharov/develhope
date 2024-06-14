@@ -13,9 +13,7 @@ import lombok.NoArgsConstructor;
 public class Flight {
 
 
-    public enum Status {
-        ONTIME, DELAYED, CANCELLED
-    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,5 +21,7 @@ public class Flight {
     private String description;
     private String fromAirport;
     private String toAirport;
+
+    @Enumerated(EnumType.STRING)
     private Status status;
 }

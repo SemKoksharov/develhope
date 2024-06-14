@@ -1,6 +1,8 @@
 package co.develhope.customqueries.services;
 
 import co.develhope.customqueries.entities.Flight;
+import co.develhope.customqueries.entities.Status;
+import co.develhope.customqueries.exceptions.EmptyResultException;
 import co.develhope.customqueries.repositotries.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -22,12 +24,8 @@ public class FlightService {
         this.flightRepository = flightRepository;
     }
 
-    public List<Flight> saveFlights() {
-        return flightRepository.saveAllAndFlush(generateFlights());
-    }
 
-    public List<Flight> saveFlights(Integer n) {
-
+    public List<Flight> saveFlights(Optional<Integer> n) {
         return flightRepository.saveAllAndFlush(generateFlights(n));
     }
 
@@ -52,11 +50,22 @@ public class FlightService {
     public List<Flight> getAllOnTime() {
         return flightRepository.findAll()
                 .stream()
-                .filter(flight -> flight.getStatus() == Flight.Status.ONTIME)
+                .filter(flight -> flight.getStatus() == Status.ONTIME)
                 .toList();
     }
 
-    public List<Flight> getAllByStatus(Optional<Flight.Status> s1, Optional<Flight.Status> s2) {
+    //Set x evitare duplicati
+    public List<Flight> getAllByStatusIn(Status[] statuses) throws Exception {
+
+        Set<Flight> flightsFound = new HashSet<>(flightRepository.findByStatusIn(statuses));
+        if (flightsFound.isEmpty()){
+            throw new EmptyResultException("Flights with statuses: " + Arrays.toString(statuses) + " not found in the DB");
+        }
+        return flightsFound.stream().toList();
+    }
+
+    //lasciato per memoria))))
+    public List<Flight> getAllByStatus(Optional<Status> s1, Optional<Status> s2) {
 
         Set<Flight> foundFlights = new HashSet<>();
 
@@ -89,36 +98,26 @@ public class FlightService {
         return foundFlights.stream().toList();
     }
 
-
-    private List<Flight> generateFlights() {
+    // A posto di usare due metodi ho fatto solo uno che gestisce 2 casi
+    // (se presente n mi genera n Flights con random status, altrimenti solo 50 con status ONTIME)
+    // COSI MEGLIO? =)
+    private List<Flight> generateFlights(Optional<Integer> n) {
         Random random = new Random();
 
-        return IntStream.range(0, 50).mapToObj(i -> {
-            Flight flight = new Flight();
-            flight.setDescription("Flight " + (i + 1));
-            flight.setFromAirport(random.ints(3, 'A', 'Z' + 1)
-                    .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
-                    .toString());
-            flight.setToAirport(random.ints(3, 'A', 'Z' + 1)
-                    .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
-                    .toString());
-            flight.setStatus(Flight.Status.ONTIME);
-            return flight;
-        }).toList();
-
-
-    }
-
-    private List<Flight> generateFlights(Integer n) {
-
-        if (n < 1) {
+        if (n. isPresent() && n.get() < 1) {
             throw new IllegalArgumentException("Error, ID must be a positive number. Now: " + n + ".");
         }
 
-        Random random = new Random();
+        // QUANTITA DI VOLI SE NON C`E 'N'  = 50, SE PRESENTE = 'N'
+        int rangeEnd = n.orElse(50);
 
-        return IntStream.range(0, n).mapToObj(i -> {
+        return IntStream.range(0, rangeEnd).mapToObj(i -> {
+
+            // QUA OGNI GIRO SE NON C`E 'N' METTE STATUS 'ONLINE', ALTRIMENTI
+            // OGNI GIRO STATUS = RANDOM
+            Status status = n.isPresent() ? Status.values()[random.nextInt(3)] : Status.ONTIME;
             Flight flight = new Flight();
+
             flight.setDescription("Flight " + (i + 1));
             flight.setFromAirport(random.ints(3, 'A', 'Z' + 1)
                     .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
@@ -127,10 +126,13 @@ public class FlightService {
                     .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
                     .toString());
 
-            flight.setStatus(Flight.Status.values()[random.nextInt(3)]);
+            flight.setStatus(status);
             return flight;
         }).toList();
 
-
     }
 }
+
+
+
+

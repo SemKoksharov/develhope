@@ -1,6 +1,7 @@
 package co.develhope.customqueries.controllers;
 
 import co.develhope.customqueries.entities.Error;
+import co.develhope.customqueries.exceptions.EmptyResultException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -20,6 +21,12 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Error> handleIllegalArgExceptions(IllegalArgumentException ex) {
+        return createErrorResponse(ex, HttpStatus.BAD_REQUEST);
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(EmptyResultException.class)
+    public ResponseEntity<Error> handleEmptyResultExceptions(EmptyResultException ex) {
         return createErrorResponse(ex, HttpStatus.BAD_REQUEST);
     }
 
