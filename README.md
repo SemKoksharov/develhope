@@ -45,13 +45,7 @@ I have always been passionate about computers! I successfully completed an inten
 - Friendly and non-confrontational
 - Ready to face new challenges with a positive attitude
 - Open-minded and adaptable
-
-## Education
-
-- **Develhope** (2024) - Intensive Java Backend Course
-- **ACME +** (2023) - General Worker Training, High-Risk Worker Training
-- **MGEI** (2009-2011) - International Relations (not completed)
-
+- 
 ## Languages
 
 - **Russian** (Native)
