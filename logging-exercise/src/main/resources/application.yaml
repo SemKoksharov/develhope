@@ -1,0 +1,7 @@
+server:
+  port: 8080
+
+custom:
+  env:
+    value1: 2
+    value2: 8

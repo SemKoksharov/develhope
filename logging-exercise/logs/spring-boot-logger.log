@@ -1,0 +1,136 @@
+2024-06-25 18:22:30,521 INFO d.s.l.LoggingExerciseApplication [main] Starting LoggingExerciseApplication using Java 21.0.3 with PID 34039 (/home/semkoks66/Develhope/develhope/logging-exercise/target/classes started by semkoks66 in /home/semkoks66/Develhope/develhope/logging-exercise)
+2024-06-25 18:22:30,522 DEBUG d.s.l.LoggingExerciseApplication [main] Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-06-25 18:22:30,523 INFO d.s.l.LoggingExerciseApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-25 18:22:31,424 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2024-06-25 18:22:31,435 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-25 18:22:31,437 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2024-06-25 18:22:31,438 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-25 18:22:31,480 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2024-06-25 18:22:31,481 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 898 ms
+2024-06-25 18:22:31,907 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2024-06-25 18:22:31,924 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path '/'
+2024-06-25 18:22:31,938 INFO d.s.l.LoggingExerciseApplication [main] Started LoggingExerciseApplication in 2.262 seconds (process running for 3.02)
+2024-06-25 18:23:24,391 INFO o.a.c.c.C.[.[.[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-25 18:23:24,398 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-06-25 18:23:24,400 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2024-06-25 18:23:24,446 INFO d.s.l.c.HomeController [http-nio-8080-exec-1] Welcome to the Spring Boot application!
+2024-06-25 18:23:24,446 INFO d.s.l.c.HomeController [http-nio-8080-exec-1] Message was printed
+2024-06-25 18:24:04,206 INFO d.s.l.c.HomeController [http-nio-8080-exec-3] Calculation finished
+2024-06-25 18:24:04,207 DEBUG d.s.l.s.CalcService [http-nio-8080-exec-3] Base value: 2
+2024-06-25 18:24:04,210 DEBUG d.s.l.s.CalcService [http-nio-8080-exec-3] Exponent value: 8
+2024-06-25 18:24:04,210 INFO d.s.l.c.HomeController [http-nio-8080-exec-3] Calculation started
+2024-06-25 18:24:55,882 ERROR d.s.l.c.HomeController [http-nio-8080-exec-5] sono programmatore stupido voglio un po di errori
+2024-06-25 18:24:55,882 ERROR d.s.l.c.HomeController [http-nio-8080-exec-5] 3...2....1......BOOOM....BAAANNG
+2024-06-25 18:24:55,887 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8080-exec-5] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed: java.lang.Error: Sono troppo cattivo] with root cause
+java.lang.Error: Sono troppo cattivo
+	at dev.semkoksharov.logging_exercise.controller.HomeController.spaccare(HomeController.java:52)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-06-25 18:26:45,720 INFO d.s.l.LoggingExerciseApplication [main] Starting LoggingExerciseApplication using Java 21.0.3 with PID 34432 (/home/semkoks66/Develhope/develhope/logging-exercise/target/classes started by semkoks66 in /home/semkoks66/Develhope/develhope/logging-exercise)
+2024-06-25 18:26:45,722 DEBUG d.s.l.LoggingExerciseApplication [main] Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-06-25 18:26:45,723 INFO d.s.l.LoggingExerciseApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-25 18:26:47,759 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2024-06-25 18:26:47,785 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-25 18:26:47,790 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2024-06-25 18:26:47,791 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-25 18:26:47,880 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2024-06-25 18:26:47,883 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2105 ms
+2024-06-25 18:26:48,556 INFO d.s.l.LoggingExerciseApplication [main] Starting LoggingExerciseApplication using Java 21.0.3 with PID 34499 (/home/semkoks66/Develhope/develhope/logging-exercise/target/classes started by semkoks66 in /home/semkoks66/Develhope/develhope/logging-exercise)
+2024-06-25 18:26:48,572 DEBUG d.s.l.LoggingExerciseApplication [main] Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-06-25 18:26:48,576 INFO d.s.l.LoggingExerciseApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-25 18:26:48,680 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2024-06-25 18:26:48,728 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path '/'
+2024-06-25 18:26:48,754 INFO d.s.l.LoggingExerciseApplication [main] Started LoggingExerciseApplication in 3.734 seconds (process running for 4.293)
+2024-06-25 18:26:49,652 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2024-06-25 18:26:49,666 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-25 18:26:49,668 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2024-06-25 18:26:49,669 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-25 18:26:49,721 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2024-06-25 18:26:49,723 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 984 ms
+2024-06-25 18:26:50,197 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2024-06-25 18:26:50,202 WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-06-25 18:26:50,217 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-25 18:26:50,234 ERROR o.s.b.d.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-06-25 18:27:35,683 INFO o.a.c.c.C.[.[.[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-25 18:27:35,684 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-06-25 18:27:35,685 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2024-06-25 18:27:35,720 ERROR d.s.l.c.HomeController [http-nio-8080-exec-1] sono programmatore stupido voglio un po di errori
+2024-06-25 18:27:35,720 ERROR d.s.l.c.HomeController [http-nio-8080-exec-1] 3...2....1......BOOOM....BAAANNG
+2024-06-25 18:27:53,002 INFO d.s.l.LoggingExerciseApplication [main] Starting LoggingExerciseApplication using Java 21.0.3 with PID 34753 (/home/semkoks66/Develhope/develhope/logging-exercise/target/classes started by semkoks66 in /home/semkoks66/Develhope/develhope/logging-exercise)
+2024-06-25 18:27:53,003 DEBUG d.s.l.LoggingExerciseApplication [main] Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-06-25 18:27:53,004 INFO d.s.l.LoggingExerciseApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-25 18:27:53,893 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2024-06-25 18:27:53,904 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-25 18:27:53,906 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2024-06-25 18:27:53,907 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-25 18:27:53,953 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2024-06-25 18:27:53,954 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 900 ms
+2024-06-25 18:27:54,312 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2024-06-25 18:27:54,323 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path '/'
+2024-06-25 18:27:54,332 INFO d.s.l.LoggingExerciseApplication [main] Started LoggingExerciseApplication in 2.143 seconds (process running for 2.548)
+2024-06-25 18:28:01,993 INFO o.a.c.c.C.[.[.[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-25 18:28:01,993 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-06-25 18:28:01,994 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2024-06-25 18:28:02,026 ERROR d.s.l.c.HomeController [http-nio-8080-exec-1] sono programmatore stupido voglio un po di errori
+2024-06-25 18:28:02,026 ERROR d.s.l.c.HomeController [http-nio-8080-exec-1] 3...2....1......BOOOM....BAAANNG
